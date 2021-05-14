@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện chuột</title>
+</head>
+<body>
+<form>
+    <img id="bonghong" src="pink%20ball.jpg" style="width: 200px"/>
+    <p>Click button below to move the image to right</p>
+    <input onclick="duoibong()" type="button" value="Click Me" />
+</form>
+<script>
+    imgObj = document.getElementById('bonghong');
+    function bongchay() {
+        imgObj.style.position = 'relative';
+        imgObj.style.left = '100px';
+    }
+    function duoibong() {
+        imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+    }
+    window.onload = bongchay;
+
+</script>
+
+</body>
+</html>
