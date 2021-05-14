@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành sự kiện bàn phím</title>
+</head>
+<body onload="docReady()">
+<img src="anh%20nobita.jpg" id="choduoi" style="position: relative;left: 0;top: 0" height="100px">
+</body>
+
+<script>
+    function upArrow() {
+        let element = document.getElementById('choduoi');
+        console.log(element.style.top )
+        element.style.top = parseInt(element.style.top) + 10 + 'px'
+        console.log(element.style.top )
+    }
+
+    function downArrow() {
+        let element = document.getElementById('choduoi');
+        element.style.top = parseInt(element.style.top) - 10 + 'px'
+    }
+
+    function leftArrow() {
+        let element = document.getElementById('choduoi');
+        element.style.left = parseInt(element.style.left) - 10 + 'px'
+    }
+
+    function rightArrow() {
+        let element = document.getElementById('choduoi');
+        element.style.left = parseInt(element.style.left) + 10 + 'px'
+    }
+
+    function move(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftArrow();
+                break;
+            case  39:
+                rightArrow();
+                break;
+            case 38:
+                upArrow();
+                break;
+            case 40:
+                downArrow()
+        }
+    }
+
+    function docReady() {
+        window.addEventListener('keydown', move);
+    }
+</script>
+</html>
